@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica;
+    color: white;
+    font-size: 12px;
+    background: #333333;
+    margin: 0 15% 0 15%;
+    width: 70%;
+    margin-top: 5px;
+}
+
+form {
+    background: #111111;
+    width: 40%;
+    margin: 30px auto;
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 5px 10px 5px #00000033;
+}
+
+.contenedor {
+    padding: 20px;
+    border-top: 1px solid #19191a;
+}
+
+form h1 {
+    font-size: 18px;
+    text-shadow: 0px 1px 0px black;
+    text-align: center;
+    padding: 15px 0px;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+label {
+    color: #666666;
+    display: block;
+    padding-bottom: 9px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 8px 5px;
+    background: linear-gradient(#1f2124, #27292c);
+    border: 1px solid #222222;
+    box-shadow: 0px 1px 0 rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    color: white;
+}
+
+input[type=text]:hover,
+input[type=password]:hover {
+    background: #27292c;
+}
+
+.p-contenedor {
+    padding: 0px 20px 20px 20px;
+}
+
+input[type=button] {
+    padding: 5px 20px;
+    border: 1px solid #00000066;
+    background: #0184ff;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+input[type=button]:hover {
+    color: #0075e2;
+    background: white;
+}
+
+.btnDerecha {
+    float: right;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    margin-top: 3%;
+}
+
+.header {
+    text-align: center;
+    height: 300px;
+    padding: 12px;
+    background-image: url("https://i.pinimg.com/originals/6c/c0/99/6cc099776c601f985b73b15a338d393e.jpg");
+}
+
+.avatar {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.userName {
+    font-size: 18px;
+    margin-top: 14px;
+    color: #ffffff;
+}
+
+.datos {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.datos li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.datos li label {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.div-finusu {
+    margin-bottom: 10px;
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+h3 {
+    color: red;
+}
+
+p {
+    font-size: 16px;
+}
