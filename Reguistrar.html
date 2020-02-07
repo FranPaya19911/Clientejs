@@ -3,12 +3,11 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <form action="#">
+    <form class="pagina" action="#">
         <h1>Registrarse</h1>
         <div class="contenedor">
             <div>
@@ -72,7 +71,6 @@
     //te saca la información del archivo que se ha seleccionado por parte del usuario
     //luego saco el tipo y si no es de tipo imagen pongo la de por defecto. 
     function leerArchivo(input) {
-        debugger;
         if (input.files) {
 
             var tre = input.files;

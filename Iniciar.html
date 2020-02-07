@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="inicio" style="display: block;">
+    <div id="inicio" class="pagina">
         <form>
             <h1>Iniciar sesion</h1>
             <div class="contenedor">
@@ -23,11 +23,12 @@
                     <input type="password" id="contrasena">
                 </div>
             </div>
-            <div class="p-contenedor">
-                <input type="button" id="iniciar" value="Iniciar" onclick="entrar()">
-                <input class="btnDerecha" type="button" id="registrarse" value="Registrarse" onclick="reguis()" />
 
-            </div>
+            <input type="button" id="iniciar" value="Iniciar" onclick="entrar()">
+        </form>
+
+        <form action="Reguistrar.html" method="POST">
+            <button class="btnDerecha">Registrarse</button>
         </form>
     </div>
 </body>
