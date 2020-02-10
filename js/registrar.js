@@ -1,12 +1,10 @@
 function validador() {
-    alert("Hola");
     var nombre = document.getElementById("nombre").value;
     var apellidos = document.getElementById("apellidos").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("pass1").value;
-    //var password2 = document.getElementById("pass2").value;
+    var password2 = document.getElementById("pass2").value;
     var imagen = document.getElementById("img").src;
-    alert(nombre + "," + apellidos + "," + email + "," + password + "," + imagen);
 
 
     escribir(nombre, apellidos, email, password, imagen);
