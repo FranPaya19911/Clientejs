@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -50,26 +51,12 @@
     <div id="Errores"></div>
 </body>
 <script>
-    //Este código tiene una parte esta sacado de internet y es para una
-    //pequeña cosa que quería hacer y me parece que es lo mejor 
-    //aunque tenga que Usar la API de Archivos de JavaScript
-    // tengo claro de como funciona.
     var fileUpload = document.getElementById('file-upload');
 
-    //Esto lo que hace es pasar el fileUpload.onchange a la función de 
-    //de escucha por eso se puede observar que la función tiene un 
-    //parámetro que se llama e que podría ser cualquiera otra letra como 
-    // la a. Luego llamamos a una función leerArchivo y le pasamos e.srcElement
-    //que lo que le pasa es de e el elemento src que es el input de arriba.
     fileUpload.onchange = function(e) {
         leerArchivo(e.srcElement);
     }
 
-
-    //Input es el e.srcElemente de antes
-    //con input.files lo que consigues es ver que es un archivo esto internamente
-    //te saca la información del archivo que se ha seleccionado por parte del usuario
-    //luego saco el tipo y si no es de tipo imagen pongo la de por defecto. 
     function leerArchivo(input) {
         if (input.files) {
 
@@ -81,23 +68,15 @@
             var tipo = texto.substring(0, 5);
 
             if (tipo === "image") {
-                //Creamos un nuevo objeto de fileReader
-                //esto me permite leer el fichero.
                 var reader = new FileReader();
-
-                //Una vez entremos nos permite hacer otra función de escucha
                 reader.onload = function(y) {
-                    //Esto es para que solo pueda tener una imagen
                     document.getElementById('img').src = "";
                     var filePreview = document.getElementById('img');
-                    //e.target.result contiene los datos base64 de la imagen cargada
                     filePreview.src = y.target.result;
                 }
 
-                //Esto nos proporciona el contenido especifico de la imagen
-                //el input.files[0] es parecido al input.files, pero input.files[0]
-                //solo dos devuelve datos relevantes para mostrar nuestra imagen.
                 reader.readAsDataURL(input.files[0]);
+
             } else {
                 document.getElementById('img').src = "img/user.png";
             }
