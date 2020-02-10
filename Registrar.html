@@ -8,46 +8,51 @@
 </head>
 
 <body>
-    <form class="pagina" action="#">
-        <h1>Registrarse</h1>
-        <div class="contenedor">
-            <div>
-                <label for="Nombre">NOMBRE </label>
-                <input type="text" id="nombre">
-            </div>
-            <div>
-                <label for="Apellidos">APELLIDOS </label>
-                <input type="text" id="apellidos">
-            </div>
-            <div>
-                <label for="email">EMAIL </label>
-                <input type="text" id="email">
-            </div>
-            <div>
-                <label for="password">CONTRASEÑA</label>
-                <input type="password" id="pass1">
-            </div>
-            <div>
-                <label for="password">REPETIR CONTRASEÑA</label>
-                <input type="password" id="pass2">
-            </div>
-            <div>
-                <label for="imagen">IMAGEN</label>
-
-
-                <input id="file-upload" type="file" accept="image/*" />
-
+    <div class="pagina">
+        <form action="#">
+            <h1>Registrarse</h1>
+            <div class="contenedor">
                 <div>
-                    <img class="img" id="img" src="img/user.png">
+                    <label for="Nombre">NOMBRE </label>
+                    <input type="text" id="nombre">
+                </div>
+                <div>
+                    <label for="Apellidos">APELLIDOS </label>
+                    <input type="text" id="apellidos">
+                </div>
+                <div>
+                    <label for="email">EMAIL </label>
+                    <input type="text" id="email">
+                </div>
+                <div>
+                    <label for="password">CONTRASEÑA</label>
+                    <input type="password" id="pass1">
+                </div>
+                <div>
+                    <label for="password">REPETIR CONTRASEÑA</label>
+                    <input type="password" id="pass2">
+                </div>
+                <div>
+                    <label for="imagen">IMAGEN</label>
+
+
+                    <input id="file-upload" type="file" accept="image/*" />
+
+                    <div>
+                        <img class="img" id="img" src="img/user.png">
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
-        <div class="p-contenedor">
-            <input type="button" id="registrarse" value="Registrarse" onclick="validador()" />
-        </div>
-    </form>
+            <div>
+                <input type="button" class="button btnDerecha" id="registrarse" value="Registrarse" onclick="validador()" />
+            </div>
+        </form>
+        <form action="Iniciar.html" method="get">
+            <button class="btnleft button">Volver</button>
+        </form>
+    </div>
     <div id="Errores"></div>
 </body>
 <script>

@@ -1,3 +1,7 @@
 function entrar() {
-    alert("hola");
+
+}
+
+function validador() {
+    alert("Hola");
 }
