@@ -13,6 +13,16 @@ function validador() {
 
 }
 
+function teclatelefono(event) {
+    var evento = event || window.event;
+    var code = evento.keyCode;
+    if (((code >= 48) && (code <= 57)) || ((code >= 96) && (code <= 105)) || (code == 8) || (code == 37) || (code == 39) || (code == 46)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function escribir(user, apellidos, email, pass, img) {
     document.cookie = "Nombre_" + user + "=" + user;
     document.cookie = "apellidos" + user + "=" + apellidos;
