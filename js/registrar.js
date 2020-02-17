@@ -15,11 +15,8 @@ function validador() {
     } else {
         alert("error");
     }
-
-
-
-
 }
+
 //validar por teclado el telefono
 function teclatelefono(event) {
     alert("hey");
