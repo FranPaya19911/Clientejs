@@ -14,27 +14,27 @@
             <h1>Registrarse</h1>
             <div class="contenedor">
                 <div>
-                    <label for="Nombre">NOMBRE </label>
-                    <input type="text" id="nombre">
+                    <label for="Nombre">NOMBRE USUARIO </label>
+                    <input type="text" id="nombre" onkeydown="return usuario(event)">
                 </div>
                 <div>
-                    <label for="Apellidos">APELLIDOS </label>
-                    <input type="text" id="apellidos">
+                    <label for="Apellidos">NOMBRE COMPLETO (Nombre y Apellidos) </label>
+                    <input type="text" id="completo">
                 </div>
                 <div>
                     <label for="email">EMAIL </label>
                     <input type="text" id="email">
                 </div>
                 <div>
-                    <label for="telefono">Telefono</label>
-                    <input type="text" id="telefono" maxlength="9" onkeydown="return teclatelefono(event)">
+                    <label for="telefono">TELEFONO</label>
+                    <input type="text" id="telefono" maxlength="9" onkeypress="return teclatelefono(event)">
                 </div>
                 <div>
                     <label for="password">CONTRASEÑA</label>
                     <input type="password" id="pass1">
                 </div>
                 <div>
-                    <label for="password">REPETIR CONTRASEÑA</label>
+                    <label for="password">CONFIRMAR CONTRASEÑA</label>
                     <input type="password" id="pass2">
                 </div>
                 <div>
