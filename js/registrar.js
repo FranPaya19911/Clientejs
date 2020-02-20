@@ -1,5 +1,5 @@
 function validador() {
-    var nombre = document.getElementById("nombre").value;
+    var user = document.getElementById("nombre").value;
     var nombre_completo = document.getElementById("completo").value;
     var email = document.getElementById("email").value;
     var telefono = document.getElementById("telefono").value;
@@ -8,9 +8,39 @@ function validador() {
     var imagen = document.getElementById("img").src;
     var correcto = true;
 
-    correcto = false;
+
+    var nombre = true;
+    var email = true;
+    var password = true;
+
+    var expnombre = new RegExp(/^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?$/);
+    if (!expnombre.test(nombre_completo)) {
+        nombre = false;
+    }
+
+    var expemail = new RegExp(/^([a-zA-Z0-9_.-+])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/)
+    if (!expemail.test(valnombre)) {
+        email = false;
+    }
+
+    var expasswd = new RegExp(/(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9]){8}(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9])/)
+    if (!expasswd.test(password)) {
+        password = false;
+    }
+
+    if (password) {
+        if (password != password2) {
+            password = false;
+        }
+    }
+
+
+    if (!nombre || !email || !password) {
+        correcto = false;
+    }
+
     if (correcto) {
-        escribir(nombre, nombre_completo, email, telefono, password, imagen);
+        escribir(user, nombre_completo, email, telefono, password, imagen);
         location.href = "Iniciar.html";
     } else {
         alert("error");
