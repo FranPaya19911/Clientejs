@@ -16,21 +16,33 @@ function validador() {
     var expnombre = new RegExp(/^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?$/);
     if (!expnombre.test(nombre_completo)) {
         nombre = false;
+        document.getElementById("lblNombre").style.display = "block";
+    } else {
+        document.getElementById("lblNombre").style.display = "none";
     }
 
-    var expemail = new RegExp(/^([a-zA-Z0-9_.-+])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/)
+    var expemail = new RegExp(/^([a-zA-Z0-9_.-+]{5})+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/)
     if (!expemail.test(valnombre)) {
         email = false;
+        document.getElementById("lblemail").style.display = "block";
+    } else {
+        document.getElementById("lblemail").style.display = "none";
     }
 
     var expasswd = new RegExp(/(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9]){8}(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9])/)
     if (!expasswd.test(password)) {
         password = false;
+        document.getElementById("lblpass").style.display = "block";
+    } else {
+        document.getElementById("lblpass").style.display = "none";
     }
 
     if (password) {
         if (password != password2) {
             password = false;
+            document.getElementById("lblpass2").style.display = "block";
+        } else {
+            document.getElementById("lblpass2").style.display = "none";
         }
     }
 
@@ -39,17 +51,21 @@ function validador() {
         correcto = false;
     }
 
+    if (imagen == "") {
+        imagen = "img/user.png";
+    }
+
     if (correcto) {
+        if (user == "" || nombre_completo == "" || email == "" || telefono == "" || password == "") {
+            alert("Todos los campos son obligatorios")
+        }
         escribir(user, nombre_completo, email, telefono, password, imagen);
         location.href = "Iniciar.html";
-    } else {
-        alert("error");
     }
 }
 
 //validar por teclado el telefono
 function teclatelefono(event) {
-    alert("hey");
     var evento = event || window.event;
     var codenum = evento.charCode;
     var codeespe = evento.keyCode;

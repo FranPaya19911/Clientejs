@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/registrar.js"></script>
     <title>Registro</title>
+    <style>
+        label {
+            display: none;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,10 +26,12 @@
                 <div>
                     <label for="Apellidos">NOMBRE COMPLETO (Nombre y Apellidos) </label>
                     <input type="text" id="completo">
+                    <label id="lblnombre">!Error!</label>
                 </div>
                 <div>
                     <label for="email">EMAIL </label>
                     <input type="text" id="email">
+                    <label id="lblemail">!Error!</label>
                 </div>
                 <div>
                     <label for="telefono">TELEFONO</label>
@@ -32,10 +40,12 @@
                 <div>
                     <label for="password">CONTRASEÑA</label>
                     <input type="password" id="pass1">
+                    <label id="lblpass">!La contraseña debe ser de 8 y tener una letra mayúscula, minúscula y un número!</label>
                 </div>
                 <div>
                     <label for="password">CONFIRMAR CONTRASEÑA</label>
                     <input type="password" id="pass2">
+                    <label id="lblpass2">¡Las contraseñas no coinciden!</label>
                 </div>
                 <div>
                     <label for="imagen">IMAGEN</label>
@@ -58,7 +68,6 @@
             <button class="btnleft button">Volver</button>
         </form>
     </div>
-    <div id="Errores"></div>
 </body>
 <script>
     var fileUpload = document.getElementById('file-upload');
