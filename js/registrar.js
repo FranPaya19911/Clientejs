@@ -10,36 +10,37 @@ function validador() {
 
 
     var nombre = true;
-    var email = true;
-    var password = true;
+    var valemail = true;
+    var pass = true;
 
     var expnombre = new RegExp(/^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?$/);
     if (!expnombre.test(nombre_completo)) {
         nombre = false;
-        document.getElementById("lblNombre").style.display = "block";
+        document.getElementById("lblnombre").style.display = "block";
     } else {
-        document.getElementById("lblNombre").style.display = "none";
+        document.getElementById("lblnombre").style.display = "none";
     }
-
-    var expemail = new RegExp(/^([a-zA-Z0-9_.-+]{5})+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/)
-    if (!expemail.test(valnombre)) {
-        email = false;
+    var expemail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    if (!expemail.test(email)) {
+        valemail = false;
+        alert("nom f")
         document.getElementById("lblemail").style.display = "block";
     } else {
+        alert("nom t")
         document.getElementById("lblemail").style.display = "none";
     }
 
     var expasswd = new RegExp(/(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9]){8}(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9])/)
     if (!expasswd.test(password)) {
-        password = false;
+        pass = false;
         document.getElementById("lblpass").style.display = "block";
     } else {
         document.getElementById("lblpass").style.display = "none";
     }
 
-    if (password) {
+    if (pass) {
         if (password != password2) {
-            password = false;
+            pass = false;
             document.getElementById("lblpass2").style.display = "block";
         } else {
             document.getElementById("lblpass2").style.display = "none";
@@ -47,7 +48,7 @@ function validador() {
     }
 
 
-    if (!nombre || !email || !password) {
+    if (!nombre || !valemail || !pass) {
         correcto = false;
     }
 
@@ -57,10 +58,12 @@ function validador() {
 
     if (correcto) {
         if (user == "" || nombre_completo == "" || email == "" || telefono == "" || password == "") {
-            alert("Todos los campos son obligatorios")
+            alert("Todos los campos son obligatorios, excepto la imagen")
+        } else {
+            escribir(user, nombre_completo, email, telefono, password, imagen);
+            location.href = "Iniciar.html";
         }
-        escribir(user, nombre_completo, email, telefono, password, imagen);
-        location.href = "Iniciar.html";
+
     }
 }
 
@@ -82,7 +85,6 @@ function teclatelefono(event) {
     } else {
         numero = false;
     }
-    alert("num" + numero)
 
     if (numero == true || especial == true) {
         return true;
@@ -94,7 +96,6 @@ function teclatelefono(event) {
 function usuario(event) {
     var evento = event || window.event;
     var code = evento.keyCode;
-
     if (((code >= 65) && (code <= 90)) || (code == 8) || (code == 37) || (code == 39) || (code == 46) || (code == 32)) {
         return true;
     } else {
