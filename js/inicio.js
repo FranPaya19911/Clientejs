@@ -18,6 +18,7 @@ function entrar() {
                 nombre = lacookie.split("=")[1];
                 if (passwd == nombre) {
                     encontrado = true;
+                    Session["usuario"] = user;
                 }
             }
         }
