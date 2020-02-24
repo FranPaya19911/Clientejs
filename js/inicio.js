@@ -35,20 +35,3 @@ function entrar() {
 
     }
 }
-
-
-// function mostrar() {
-//     var lasCookies = document.cookie;
-//     var texto = "";
-
-//     var arrayCookies = lasCookies.split(";");
-//     for (var i = 0; i < arrayCookies.length; i++) {
-//         texto = texto + arrayCookies[i] + "\n";
-//     }
-
-//     if (lasCookies != "") {
-//         alert(texto);
-//     } else {
-//         alert("No hay cookies");
-//     }
-// }
