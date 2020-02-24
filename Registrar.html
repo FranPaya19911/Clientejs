@@ -21,6 +21,7 @@
                 <div>
                     <label for="Nombre">NOMBRE USUARIO </label>
                     <input type="text" id="nombre" onkeydown="return usuario(event)">
+                    <label class="val" id="lblusuario" style="display: none">!Ese nombre de usuario ya existe!</label>
                 </div>
                 <div>
                     <label for="Apellidos">NOMBRE COMPLETO (Nombre y Apellidos) </label>
@@ -31,6 +32,7 @@
                     <label for="email">EMAIL </label>
                     <input type="text" id="email">
                     <label class="val" id="lblemail" style="display: none">!Error!</label>
+                    <label class="val" id="lblemalnew" style="display: none">!El correo ya exite!</label>
                 </div>
                 <div>
                     <label for="telefono">TELEFONO</label>

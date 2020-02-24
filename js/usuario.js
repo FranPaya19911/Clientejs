@@ -1,3 +1,4 @@
 function ok() {
-    alert('<%=Session["usuario"] %>')
+    var data = sessionStorage.getItem('user');
+    alert(data);
 }

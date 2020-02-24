@@ -8,10 +8,32 @@ function validador() {
     var imagen = document.getElementById("img").src;
     var correcto = true;
 
-
+    var usuario = true;
     var nombre = true;
     var valemail = true;
     var pass = true;
+
+    var num = (document.cookie.split("User_").length - 1);
+
+    if (num > 0) {
+        var valuser = "User_";
+
+        for (i = 1; i <= num; i++) {
+            var lacookie = document.cookie.split(valuser)[i].split(';')[0];
+            var nombre = lacookie.split("=")[1];
+
+            if (user == nombre) {
+                usuario = false;
+            }
+        }
+
+        if (!usuario) {
+            document.getElementById("lblusuario").style.display = "block";
+        } else {
+            document.getElementById("lblusuario").style.display = "none";
+        }
+
+    }
 
     var expnombre = new RegExp(/^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ\'])+[\s]?$/);
     if (!expnombre.test(nombre_completo)) {
@@ -20,12 +42,30 @@ function validador() {
     } else {
         document.getElementById("lblnombre").style.display = "none";
     }
+
     var expemail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     if (!expemail.test(email)) {
         valemail = false;
         document.getElementById("lblemail").style.display = "block";
     } else {
         document.getElementById("lblemail").style.display = "none";
+    }
+
+    if (valemail) {
+        var correo = "email_";
+        for (i = 1; i <= num; i++) {
+            var lacookie = document.cookie.split(correo)[i].split(';')[0];
+            var nombre = lacookie.split("=")[1];
+            if (email == nombre) {
+                valemail = false;
+            }
+        }
+
+        if (!valemail) {
+            document.getElementById("lblemalnew").style.display = "block";
+        } else {
+            document.getElementById("lblemalnew").style.display = "none";
+        }
     }
 
     var expasswd = new RegExp(/(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9]){8}(?=\w*[A-Z])(?=\w*[a-z])(?=\w*[0-9])/)
@@ -46,7 +86,7 @@ function validador() {
     }
 
 
-    if (!nombre || !valemail || !pass) {
+    if (!nombre || !valemail || !pass || !usuario) {
         correcto = false;
     }
 

@@ -7,18 +7,22 @@ function entrar() {
     } else {
         var encontrado = false;
         var num = (document.cookie.split("User_").length - 1);
+        alert(num);
         var valuser = "User_";
         var valpass = "pass_" + user;
 
         for (i = 1; i <= num; i++) {
             var lacookie = document.cookie.split(valuser)[i].split(';')[0];
             var nombre = lacookie.split("=")[1];
+            alert(nombre);
             if (user == nombre) {
                 lacookie = document.cookie.split(valpass)[i].split(';')[0];
                 nombre = lacookie.split("=")[1];
+                alert(nombre);
                 if (passwd == nombre) {
                     encontrado = true;
-                    Session["usuario"] = user;
+                    alert("ok")
+                    sessionStorage.setItem('user', user);
                 }
             }
         }
