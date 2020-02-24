@@ -23,10 +23,8 @@ function validador() {
     var expemail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     if (!expemail.test(email)) {
         valemail = false;
-        alert("nom f")
         document.getElementById("lblemail").style.display = "block";
     } else {
-        alert("nom t")
         document.getElementById("lblemail").style.display = "none";
     }
 
