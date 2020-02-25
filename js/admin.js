@@ -12,26 +12,44 @@ function Crear() {
     var telefono = "telefono_";
     var pass = "pass_";
     var img = "img_";
+    alert(num)
 
-    for (i = 0; i <= num; i++) {
+
+    for (i = 1; i <= num; i++) {
         var tr = document.createElement("tr");
 
-        for (j = 1; j <= valor.length; j++) {
-            var usuario = document.cookie.split(valor[i])[j].split(';')[0];
-            alert(usuario);
-            var usuario = usuario.split("=")[1];
-            texto = usuario
+        for (j = 0; j < valor.length; j++) {
 
-            var elemento = document.createElement("td");
-            var contenido = document.createTextNode(texto);
-            tr.appendChild(elemento);
-            elemento.appendChild(contenido);
+            var usuario = document.cookie.split(valor[j])[i].split(';')[0];
+            var usuario = usuario.split("=")[1];
+
+            if (j == 4) {
+                usuario = usuario.charAt(0) + "********";
+            }
+            if (j == 5) {
+                var td = document.createElement("td");
+                td.id = "img" + i;
+                valor = td.id;
+                td.setAttribute("onmouseout", "sacarfoto(" + "'" + valor + "'" + ")")
+            } else {
+                var td = document.createElement("td");
+            }
+
+            var texto = document.createTextNode(usuario);
+            td.appendChild(texto);
+            tr.appendChild(td);
 
         }
         padre.appendChild(tr);
 
     }
 
-    alert(texto)
+}
+
+function sacarfoto(valor) {
+    alert(valor);
+    document.getElementById("t").innerHTML = "Hola";
+    document.getElementById(valor).innerHTML = "Hola";
+
 
 }
