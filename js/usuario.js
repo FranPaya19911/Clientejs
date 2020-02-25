@@ -1,6 +1,5 @@
-function ok() {
+function datos() {
     var data = sessionStorage.getItem('user');
-    alert(data);
 
     var user = "User_" + data;
     var nombre = "Nombre_" + data;
