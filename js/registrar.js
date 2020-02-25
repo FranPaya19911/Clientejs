@@ -91,13 +91,9 @@ function validador() {
         correcto = false;
     }
 
-    if (imagen == "") {
-        imagen = "img/user.png";
-    }
-
     if (correcto) {
         if (user == "" || nombre_completo == "" || email == "" || telefono == "" || password == "") {
-            alert("Todos los campos son obligatorios, excepto la imagen")
+            alert("Todos los campos son obligatorios")
         } else {
             escribir(user, nombre_completo, email, telefono, password, imagen);
             location.href = "Iniciar.html";
