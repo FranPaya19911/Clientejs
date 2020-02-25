@@ -32,7 +32,7 @@ function entrar() {
         if (encontrado) {
             location.href = "Usuarios.html";
         } else {
-            alert("error")
+            alert("¡Error! .El usuario o la contraseña son incorrectos")
         }
 
     }
