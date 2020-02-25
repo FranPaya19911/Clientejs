@@ -6,15 +6,6 @@ function Crear() {
     var valor = ["User_", "Nombre_", "email_", "telefono_", "pass_", "img_"];
 
 
-    var user = "User_";
-    var nombre = "Nombre_";
-    var email = "email_";
-    var telefono = "telefono_";
-    var pass = "pass_";
-    var img = "img_";
-    alert(num)
-
-
     for (i = 1; i <= num; i++) {
         var tr = document.createElement("tr");
 

@@ -51,9 +51,6 @@
                 <div>
                     <label for="imagen">IMAGEN</label>
 
-
-                    <input id="file-upload" type="file" accept="image/*" />
-
                     <div>
                         <img class="img" id="img" src="img/user.png">
                     </div>
@@ -70,38 +67,5 @@
         </form>
     </div>
 </body>
-<script>
-    var fileUpload = document.getElementById('file-upload');
-
-    fileUpload.onchange = function(e) {
-        leerArchivo(e.srcElement);
-    }
-
-    function leerArchivo(input) {
-        if (input.files) {
-
-            var tre = input.files;
-            var texto = "";
-            var i = 0;
-            var f = tre[i];
-            texto = f.type;
-            var tipo = texto.substring(0, 5);
-
-            if (tipo === "image") {
-                var reader = new FileReader();
-                reader.onload = function(y) {
-                    document.getElementById('img').src = "";
-                    var filePreview = document.getElementById('img');
-                    filePreview.src = y.target.result;
-                }
-
-                reader.readAsDataURL(input.files[0]);
-
-            } else {
-                document.getElementById('img').src = "img/user.png";
-            }
-        }
-    }
-</script>
 
 </html>
