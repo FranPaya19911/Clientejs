@@ -26,13 +26,16 @@ function Crear() {
             if (j == 4) {
                 usuario = usuario.charAt(0) + "********";
             }
+
+            var td = document.createElement("td");
+
             if (j == 5) {
-                var td = document.createElement("td");
                 td.id = "img" + i;
-                valor = td.id;
-                td.setAttribute("onmouseout", "sacarfoto(" + "'" + valor + "'" + ")")
-            } else {
-                var td = document.createElement("td");
+                valortd = td.id;
+                td.className = "imgstyle"
+                td.setAttribute("onmouseout", "sacarfoto(" + "'" + valortd + "'" + ")");
+                td.setAttribute("onmouseover", "ponerfoto(" + "'" + valortd + "'" + ")");
+                td.value = usuario;
             }
 
             var texto = document.createTextNode(usuario);
@@ -44,12 +47,17 @@ function Crear() {
 
     }
 
+
 }
 
-function sacarfoto(valor) {
-    alert(valor);
-    document.getElementById("t").innerHTML = "Hola";
-    document.getElementById(valor).innerHTML = "Hola";
+var textosrc = "";
 
+function sacarfoto(valor) {
+    document.getElementById(valor).innerHTML = textosrc;
+}
+
+function ponerfoto(valor) {
+    textosrc = document.getElementById(valor).value;
+    document.getElementById(valor).innerHTML = "<img src='" + textosrc + "'>";
 
 }
