@@ -1,3 +1,4 @@
+//////// Se mira si es "admin", un "usuario" o no exite ////////
 function entrar() {
     var user = document.getElementById("user").value;
     var passwd = document.getElementById("password").value;
@@ -10,7 +11,7 @@ function entrar() {
         var valuser = "User_";
         var valpass = ""
 
-
+        //saber si el usuario exite y comprobar si la contraseña es correcta.
         for (i = 1; i <= num; i++) {
 
             var lacookie = document.cookie.split(valuser)[i].split(';')[0];
@@ -24,6 +25,7 @@ function entrar() {
 
                 if (passwd == nombre) {
                     encontrado = true;
+                    //creacion de una variable de session.
                     sessionStorage.setItem('user', user);
                 }
             }

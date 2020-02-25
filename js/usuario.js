@@ -1,4 +1,6 @@
+//////// En esta funcion buscamos los datos del usuario registrado y los colocamos en el html ////////
 function datos() {
+    //recoger el dato de la sesion creada en iniciar.js
     var data = sessionStorage.getItem('user');
 
     var user = "User_" + data;

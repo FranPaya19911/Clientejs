@@ -1,3 +1,4 @@
+//////// Validacion de campos con EXPRESIONES REGULARES ////////
 function validador() {
     var user = document.getElementById("nombre").value;
     var nombre_completo = document.getElementById("completo").value;
@@ -105,7 +106,9 @@ function validador() {
     }
 }
 
-//validar por teclado el telefono
+//////// Validacion de campos por TECLADO ////////
+
+//////// validar por teclado el telefono ////////
 function teclatelefono(event) {
     var evento = event || window.event;
     var codenum = evento.charCode;
@@ -130,7 +133,8 @@ function teclatelefono(event) {
         return false;
     }
 }
-//validar por teclado el nombre y apellidos
+
+//////// validar por teclado el nombre y apellidos ////////
 function usuario(event) {
     var evento = event || window.event;
     var code = evento.keyCode;
@@ -141,6 +145,7 @@ function usuario(event) {
     }
 }
 
+//////// CREACIÓN DE LAS COOKIES ////////
 function escribir(user, nombre, email, telefono, pass, img) {
     document.cookie = "User_" + user + "=" + user;
     document.cookie = "Nombre_" + user + "=" + nombre;
