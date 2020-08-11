@@ -86,7 +86,6 @@ function validador() {
         }
     }
 
-
     if (!nombre || !valemail || !pass || !usuario) {
         correcto = false;
     }
@@ -96,7 +95,7 @@ function validador() {
             alert("Todos los campos son obligatorios")
         } else {
             escribir(user, nombre_completo, email, telefono, password, imagen);
-            location.href = "Iniciar.html";
+            location.href = "index.html";
         }
 
     }
